@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Dragones</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<h1>Selecciona tu Dragón</h1>
+
+<!-- Sección de selección de dragones -->
+<div id="dragonSelection">
+  <div id="dragonsContainer">
+    <div class="dragon" data-name="Dragón Rojo" data-size="100" data-image="/images/dragon-red.png" onclick="selectDragon(this)">
+      <img src="/images/dragon1.png" alt="Dragón Rojo">
+    </div>
+    <div class="dragon" data-name="Dragón Azul" data-size="120" data-image="/images/dragon-blue.png" onclick="selectDragon(this)">
+      <img src="/images/dragon2.png" alt="Dragón Azul">
+    </div>
+  </div>
+
+  <!-- Formulario para añadir un nuevo dragón -->
+  <div id="addDragonForm">
+    <h3>Añadir un nuevo Dragón</h3>
+    <label for="dragonName">Nombre del Dragón:</label>
+    <input type="text" id="dragonName" placeholder="Nombre" required>
+
+    <label for="dragonSize">Tamaño del Dragón (px):</label>
+    <input type="number" id="dragonSize" placeholder="Tamaño" min="50" max="150" required>
+
+    <label for="dragonImage">Imagen del Dragón (URL):</label>
+    <input type="text" id="dragonImage" placeholder="URL de la imagen" required>
+
+    <button onclick="addDragon()">Añadir Dragón</button>
+  </div>
+
+  <!-- Formulario para modificar un dragón -->
+  <div id="editDragonForm" style="display: none;">
+    <h3>Modificar Dragón Seleccionado</h3>
+    <label for="editDragonName">Nombre del Dragón:</label>
+    <input type="text" id="editDragonName" placeholder="Nombre" required>
+
+    <label for="editDragonSize">Tamaño del Dragón (px):</label>
+    <input type="number" id="editDragonSize" placeholder="Tamaño" min="50" max="150" required>
+
+    <label for="editDragonImage">Imagen del Dragón (URL):</label>
+    <input type="text" id="editDragonImage" placeholder="URL de la imagen" required>
+
+    <button onclick="updateDragon()">Actualizar Dragón</button>
+    <button onclick="deleteDragon()">Eliminar Dragón</button>
+  </div>
+</div>
+
+<!-- Botón para iniciar el juego -->
+<button id="playButton" onclick="playGame()">Jugar</button>
+<canvas id="gameCanvas" style="display: block; margin-top: 20px;"></canvas>
+
+<!-- Muestra el dragón seleccionado -->
+<div id="selectedDragon"></div>
+
+
+
+<!-- Archivos JavaScript -->
+<script src="/js/menu.js"></script>
+</body>
+</html>
